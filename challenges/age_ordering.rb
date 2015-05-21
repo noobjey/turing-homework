@@ -11,7 +11,6 @@ data = [
 # sorted_by_age = data.sort_by do |name, age|
 #  age
 # end
-#
 
 # sorted_by_age.each do |name, age|
 #   puts name
