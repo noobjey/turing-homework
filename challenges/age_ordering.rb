@@ -29,22 +29,41 @@ data = [
 # puts sorted_by_age_name.inspect
 
 # Level 4: Write code to automatically build a hash with the age as the key and an array of names as the value (all the people who are that age). e.g. {24 => ['Juan', 'Steve', 'Jill']...}
-hash = Hash.new
+# hash = Hash.new
+#
+# data.each do |name, age|
+#
+#   if hash.has_key? age
+#
+#     if !hash[age].is_a? Array
+#       hash[age] = [hash[age]]
+#     end
+#
+#     hash[age] << name
+#
+#   else
+#     hash[age] = name
+#   end
+#
+# end
+#
+# puts hash.inspect
+#
+# new_line = "/n/n/n"
+#
+# puts new_line
+#
+# def is_someone_already_that_age(key, hash)
+#   hash.has_key? key
+# end
 
-data.each do |name, age|
+puts before_hash = data.group_by {|key, value| "key: #{key} value:#{value}"}
 
-  if hash.has_key? age
-
-    if !hash[age].is_a? Array
-      hash[age] = [hash[age]]
-    end
-
-    hash[age] << name
-
-  else
-    hash[age] = name
-  end
-
-end
-
-puts hash.inspect
+puts before_hash.to_h.inspect
+# hash = data.to_h
+#
+# puts hash.invert
+#
+#
+# puts hash.invert.group_by {|i| i}.inspect
+#

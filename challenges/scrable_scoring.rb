@@ -49,6 +49,7 @@ word.upcase.each_char do |char|
   puts "#{char} has the value #{scores[char]}"
 end
 
+puts new_lines
 
 
 # Level 3: Scoring an Entire String
@@ -57,4 +58,13 @@ end
 # word = "hello"
 #
 # Which, when run, outputs this:
-# hello has the total score
+# hello has the total score 8
+
+word = "hello"
+score = 0
+
+word.upcase.each_char do |char|
+  score += scores[char]
+end
+
+puts "#{word} has the total score #{score}"
