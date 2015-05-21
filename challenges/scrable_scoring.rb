@@ -22,13 +22,15 @@ scores = {
   "Y"=>4, "Z"=>10
 }
 
+new_lines = "\n\n"
+
 word = ['H', 'E', 'L', 'L', 'O']
 
 word.each do |key|
   puts "#{key} has the value #{scores[key]}"
 end
 
-
+puts new_lines
 # Level 2: Scoring Letters in a String
 #
 # Write code to output the score for the letters in a string like this:
@@ -41,6 +43,12 @@ end
 # L has the value 1
 # O has the value 1
 
+word = "hello"
+
+word.upcase.each_char do |char|
+  puts "#{char} has the value #{scores[char]}"
+end
+
 
 
 # Level 3: Scoring an Entire String
@@ -49,4 +57,4 @@ end
 # word = "hello"
 #
 # Which, when run, outputs this:
-# hello has the total score 
+# hello has the total score
