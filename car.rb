@@ -46,4 +46,3 @@ puts "This sweet ride is sitting on #{my_second_car.wheel_count} wheels"
 
 puts my_car.start
 puts my_car.start
-puts my_car.start
