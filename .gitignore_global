@@ -1,3 +1,4 @@
-# ~/.gitignore_global
+# run in terminal => git config --global core.excludesfile ~/.gitignore_global
+# store this file in => ~/.gitignore_global
 .idea/
 .DS_Store
