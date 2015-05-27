@@ -4,20 +4,18 @@
 # encounter to build a software model of a plane. For each class, give a one sentence description of the class'
 # responsibility
 Classes and airplane object might have
-1) Passenger
-2) Pilot
-3) Steward
-4) LandingGear
-5) Radar
-6) Radio
-7) Bathroom
-8) Seat
-9) Soda
-10) Snack
-11) Movie
-12) Door
-13) Window
-14) Light
-15) Parachute
-16) Cart
-17) Intercom
+1) Passenger - contain methods to interact with passengers
+2) Pilot - methods for flying
+3) Steward - methods for getting drinks
+4) LandingGear - methods to open close and test landing
+5) Radar - methods for finding where things are in space
+6) Radio - methods for sending and recieving
+7) Seat - methods for checking if they are filled
+8) Drinks - methods for checking and distributing supplys
+9) Snack - methods for checking and distributing supplys
+10) Movie - methods for selecting and playing
+11) Door - methods for status, opening and closing
+12) Light - methods for status, on and off
+13) Cart - methods for moving, supplying and such
+14) Intercom - methods for using
+15) Engine - methods for status and sending power
