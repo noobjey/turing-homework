@@ -43,7 +43,6 @@ end
 
 class FilePrinter
   def initialize(file_name)
-    @file_name = file_name
     @file = File.open file_name, 'w+'
   end
 
