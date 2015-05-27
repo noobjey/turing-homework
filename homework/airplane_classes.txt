@@ -1,0 +1,23 @@
+#https://github.com/turingschool/challenges/blob/master/poodr.markdown
+#Part 1: Designing Classes with a Single Responsibility
+#Once you finish, think about a commercial airplane. Create a list of at least 15 classes you'd expect to
+# encounter to build a software model of a plane. For each class, give a one sentence description of the class'
+# responsibility
+Classes and airplane object might have
+1) Passenger
+2) Pilot
+3) Steward
+4) LandingGear
+5) Radar
+6) Radio
+7) Bathroom
+8) Seat
+9) Soda
+10) Snack
+11) Movie
+12) Door
+13) Window
+14) Light
+15) Parachute
+16) Cart
+17) Intercom
