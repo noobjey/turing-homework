@@ -6,7 +6,6 @@
 #
 
 class Fibber
-  attr_accessor :printer
 
   def initialize(printer)
     @printer = printer
@@ -31,7 +30,7 @@ class Fibber
 
   def print(quantity)
     all_fib_up_to(quantity).each do |number|
-      printer.print(number)
+      @printer.print(number)
     end
   end
 end
@@ -45,7 +44,7 @@ end
 class FilePrinter
   def initialize(file_name)
     @file_name = file_name
-    @file = File.open file_name, 'a+'
+    @file = File.open file_name, 'w+'
   end
 
   def print(value)
