@@ -11,3 +11,10 @@
 # The example above took 21 iterations to get to a result. Can you tweak the algorithm so that it takes the same
 # number of swaps (7) but fewer total operations?
 
+sequence = [4, 3, 5, 0, 1]
+swaps = 0
+
+
+
+puts "Final result: #{result}"
+puts "Swaps: #{swaps}"
