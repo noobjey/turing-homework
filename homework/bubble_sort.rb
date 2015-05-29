@@ -18,6 +18,7 @@ sequence   = [4, 3, 5, 0, 1]
 # sequence = [5, 4, 3, 2, 1]
 made_a_swap = true
 swaps      = 0
+loops = 0
 
 def swap(counter, sequnce)
   temp                    = sequnce[counter]
@@ -38,6 +39,7 @@ while made_a_swap do
       swap(counter, sequence)
     end
 
+    loops += 1
     counter += 1
   end
 end
@@ -46,3 +48,4 @@ result = sequence
 # sequence[0] = sequence[1]
 puts "Final result: #{result}"
 puts "Swaps: #{swaps}"
+puts "Loops: #{loops}"
