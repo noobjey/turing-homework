@@ -7,53 +7,41 @@
 # In addition to writing an implementation following the template below, answer the following questions:
 #
 # Given the numbers 0 through 5, what would be the worst case scenario for bubble sort (aka, what order would necessitate the most swaps)?
-# answer: reverse
+# answer: descending order
 # How many swaps would that worst case take?
-# answer: no idea
+# answer: 10
 # The example above took 21 iterations to get to a result. Can you tweak the algorithm so that it takes the same
 # number of swaps (7) but fewer total operations?
 # answer: do or do not i guess
 
-sequence    = [4, 3, 5, 0, 1]
-swaps       = 0
+sequence   = [4, 3, 5, 0, 1]
+# sequence = [5, 4, 3, 2, 1]
 made_a_swap = true
+swaps      = 0
+
+def swap(counter, sequnce)
+  temp                    = sequnce[counter]
+  sequnce[counter]     = sequnce[counter + 1]
+  sequnce[counter + 1] = temp
+end
+
 
 while made_a_swap do
-  start_over = false
+  counter     = 0
+  made_a_swap = false
 
-  puts "outer loop"
+  while counter < sequence.length - 1 && !made_a_swap
 
-  sequence.each_with_index do |value, index|
-  puts "inner loop"
-    if index < sequence.length - 1
-      # puts "value: #{value}"
-      # puts "index: #{index}"
-      # puts "sequence: #{sequence.length}"
-
-      if value > sequence[index + 1] && !start_over
-        puts "before swap"
-        puts "sequence[#{index + 1}] : #{sequence[index + 1]}"
-        puts "sequence[#{index}] : #{sequence[index]}"
-        puts "in the loop index[#{index}] - value[#{value}] - sequence[#{sequence}]"
-
-        sequence[index]     = sequence[index + 1]
-        sequence[index + 1] = value
-
-        made_a_swap = true
-        start_over  = true
-
-        puts "after swap"
-        puts "sequence[#{index}] : #{sequence[index]}"
-        puts "sequence[#{index + 1}] : #{sequence[index + 1]}"
-        puts "in the loop index[#{index}] - value[#{value}] - sequence[#{sequence}]"
-      else
-        made_a_swap = false
-      end
+    if sequence[counter] > sequence[counter + 1]
+      made_a_swap = true
+      swaps += 1
+      swap(counter, sequence)
     end
 
+    counter += 1
   end
-
 end
+
 result = sequence
 # sequence[0] = sequence[1]
 puts "Final result: #{result}"
