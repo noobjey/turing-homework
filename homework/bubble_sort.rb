@@ -12,7 +12,7 @@
 # answer: 10
 # The example above took 21 iterations to get to a result. Can you tweak the algorithm so that it takes the same
 # number of swaps (7) but fewer total operations?
-# answer: do or do not i guess
+# answer: continue parsing array after swap
 
 sequence   = [4, 3, 5, 0, 1]
 # sequence = [5, 4, 3, 2, 1]
@@ -31,7 +31,7 @@ while made_a_swap do
   counter     = 0
   made_a_swap = false
 
-  while counter < sequence.length - 1 && !made_a_swap
+  while counter < sequence.length - 1 #&& !made_a_swap
 
     if sequence[counter] > sequence[counter + 1]
       made_a_swap = true
@@ -39,9 +39,9 @@ while made_a_swap do
       swap(counter, sequence)
     end
 
-    loops += 1
     counter += 1
   end
+  loops += 1
 end
 
 result = sequence
