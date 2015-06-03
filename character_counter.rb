@@ -5,7 +5,6 @@ class CharacterCounter
   end
 
   def validate string
-    # puts "****#{string.class}"
     string.is_a? String
   end
 
@@ -14,15 +13,29 @@ class CharacterCounter
   end
 
   def store character
-    @counted_characters[character] = occurances character
+    @counted_characters[character] = self.occurances character
     @counted_characters
   end
 
-  def count string
-    string.each_char do |character|
-      store character
+  def count
+    while !@string.empty? do
+      character = @string[0]
+
+      self.store character
+      @string.delete! character
     end
     @counted_characters
   end
 
+  def by_most_popular
+    count
+    sorted_hash = @counted_characters.sort_by { |k, v| v }.last(5).reverse.to_h
+    sorted_hash
+  end
+
+  def top_five
+    @string.delete! ' '
+    result = by_most_popular
+    result
+  end
 end

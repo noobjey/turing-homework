@@ -87,23 +87,45 @@ class CharacterCounterTest < Minitest::Test
   def test_add_each_charater_in_string
     input    = 'abaa'
     expected = { 'a' => 3, 'b' => 1 }
-    counter  = CharacterCounter.new
+    counter  = CharacterCounter.new input
 
-    result = counter.count input
+    result = counter.count
 
     assert_equal expected, result
   end
 
-  # def test_sort_output_in_decending_order_by_character_count
-  #   input    = { b: 1, a: 3 }
-  #   expected = { a: 3, b: 1 }
-  #   counter  = CharacterCounter.new string
-  #
-  #   result = counter.by_most_popular input
-  #
-  #   assert_equal expected, result
-  # end
-  #
+  def test_sort_output_in_decending_order_by_character_count
+    input    = 'baaa'
+    expected = { 'a' => 3, 'b' => 1 }
+    counter  = CharacterCounter.new input
+
+    result = counter.by_most_popular
+
+    assert_equal expected, result
+  end
+
+  def test_output_top_5
+    input    = 'baaacdcccbkkeeeeetrr'
+    expected = { 'e' => 5, 'c' => 4, 'a' => 3,  'k' => 2, 'b' => 2 }
+    counter  = CharacterCounter.new input
+
+    result = counter.top_five
+
+    assert_equal expected, result
+  end
+
+  def test_output_top_5_does_not_count_spaces
+    input    = 'ba     aac dcccb kkeeeee trr'
+    expected = { 'e' => 5, 'c' => 4, 'a' => 3,  'k' => 2, 'b' => 2 }
+    counter  = CharacterCounter.new input
+
+    result = counter.top_five
+
+    assert_equal expected, result
+  end
+
+
+
   # def test_print_formated_output
   #   input    = { a: 3, b: 1 }
   #   expected = "a: 3/nb: 1"
