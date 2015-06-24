@@ -14,38 +14,62 @@
 # number of swaps (7) but fewer total operations?
 # answer: continue parsing array after swap
 
-sequence   = [4, 3, 5, 0, 1]
+require 'benchmark'
+
+
+# jeffs o(n) class
+sequence = []
+30000.times { |num| sequence << num }
+
+worst_case = sequence.reverse
+
+# sequence   = [4, 3, 5, 0, 1]
 # sequence = [5, 4, 3, 2, 1]
-made_a_swap = true
-swaps      = 0
-loops = 0
 
-def swap(counter, sequnce)
-  temp                    = sequnce[counter]
-  sequnce[counter]     = sequnce[counter + 1]
-  sequnce[counter + 1] = temp
-end
+def sort(sequence)
+
+  made_a_swap = true
+  swaps       = 0
+  loops       = 0
+
+  def swap(counter, sequnce)
+    temp                 = sequnce[counter]
+    sequnce[counter]     = sequnce[counter + 1]
+    sequnce[counter + 1] = temp
+  end
 
 
-while made_a_swap do
-  counter     = 0
-  made_a_swap = false
+  while made_a_swap do
+    counter     = 0
+    made_a_swap = false
 
-  while counter < sequence.length - 1 #&& !made_a_swap
+    while counter < sequence.length - 1 #&& !made_a_swap
 
-    if sequence[counter] > sequence[counter + 1]
-      made_a_swap = true
-      swaps += 1
-      swap(counter, sequence)
+      if sequence[counter] > sequence[counter + 1]
+        made_a_swap = true
+        swaps       += 1
+        swap(counter, sequence)
+      end
+
+
+      counter += 1
     end
 
-    counter += 1
+    print "#{loops} " if loops % 1000 == 0
+    loops += 1
   end
-  loops += 1
+
 end
 
-result = sequence
+# result = sequence
 # sequence[0] = sequence[1]
-puts "Final result: #{result}"
-puts "Swaps: #{swaps}"
-puts "Loops: #{loops}"
+#
+# puts "Final result: #{result}"
+# puts "Swaps: #{swaps}"
+# puts "Loops: #{loops}"
+
+# puts worst_case.inspect
+
+puts Benchmark.realtime {sort(worst_case)}
+
+# puts worst_case.inspect
